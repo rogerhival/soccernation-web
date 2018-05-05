@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { TeamService }  from '../../services/teams/team.service';
+import { TeamService } from '../../services/teams/team.service';
 
 @Component({
   selector: 'app-team-detail',

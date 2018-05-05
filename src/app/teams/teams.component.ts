@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamService } from '../services/teams/team.service'
+import { TeamService } from '../services/teams/team.service';
 
 @Component({
   selector: 'app-teams',
@@ -20,7 +20,7 @@ export class TeamsComponent implements OnInit {
 //    this.selectedTeam = team;
 //  }
 
-  getTeams(): void{
+  getTeams(): void {
     this.teamService.getTeams().subscribe(h => this.teams = h.json());
   }
 }
