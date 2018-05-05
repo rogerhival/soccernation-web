@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Team } from '../team';
-import { TeamService } from '../services/team.service';
+import { TeamService } from '../services/teams/team.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +7,7 @@ import { TeamService } from '../services/team.service';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  teams: Team[] = [];
+  teams = [];
 
   constructor(private teamService: TeamService) { }
 
@@ -17,7 +16,6 @@ export class DashboardComponent implements OnInit {
   }
 
   getTeams(): void {
-    this.teamService.getTeams()
-      .subscribe(teams => this.teams = teams.slice(1, 5));
+    this.teamService.getTeams().subscribe(t => this.teams = t.json());
   }
 }

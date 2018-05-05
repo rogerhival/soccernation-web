@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Team } from '../../team'
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { TeamService }  from '../../services/team.service';
+import { TeamService }  from '../../services/teams/team.service';
 
 @Component({
   selector: 'app-team-detail',
@@ -11,7 +10,7 @@ import { TeamService }  from '../../services/team.service';
 })
 export class TeamDetailComponent implements OnInit {
 
-  @Input() team: Team;
+  @Input() team: any;
 
   constructor(private route: ActivatedRoute,
     private teamService: TeamService,
@@ -22,8 +21,8 @@ export class TeamDetailComponent implements OnInit {
   }
 
   getTeam(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.teamService.getTeam(id).subscribe(team => this.team = team);
+    const id = this.route.snapshot.paramMap.get('id');
+    this.teamService.getTeam(id).subscribe(t => this.team = t.json());
   }
 
   goBack(): void {
