@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-//import { Http } from '@angular/http';
 import { Api } from '../';
 
 @Injectable({

@@ -6,7 +6,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { TeamsComponent, TeamDetailComponent } from './pages';
+import { TeamsComponent, TeamDetailComponent, LoginComponent } from './pages';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Api } from './services';
@@ -16,7 +16,8 @@ import { Api } from './services';
     AppComponent,
     TeamsComponent,
     TeamDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
