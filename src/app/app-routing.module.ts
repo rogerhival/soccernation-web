@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TeamsComponent, TeamDetailComponent, LoginComponent } from './pages';
+import { TeamsComponent, TeamDetailComponent, LoginComponent, UserComponent } from './pages';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'teams', component: TeamsComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: TeamDetailComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

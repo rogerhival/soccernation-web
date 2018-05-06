@@ -20,7 +20,7 @@ import { ActivatedRoute } from '@angular/router';
         
     }
   
-    doLogin(): void {
+    signUp(accountInfo: any): void {
        
     }
   }

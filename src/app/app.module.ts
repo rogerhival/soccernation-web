@@ -6,10 +6,10 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { TeamsComponent, TeamDetailComponent, LoginComponent } from './pages';
+import { TeamsComponent, TeamDetailComponent, LoginComponent, UserComponent } from './pages';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { Api } from './services';
+import { Api } from './services/api/api';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { Api } from './services';
     TeamsComponent,
     TeamDetailComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
