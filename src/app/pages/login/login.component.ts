@@ -10,23 +10,29 @@ import { UserService } from '../../services';
 })
 export class LoginComponent implements OnInit {
 
-    account: { email: string, password: string } = {
-        email: 'rogerhival@gmail.com',
-        password: 'tonin@123'
-    };
+  isCreatingUser: any;
 
-    constructor(private router: Router,
-        private userService: UserService) { }
+  account: { email: string, password: string } = {
+      email: 'rogerhival@gmail.com',
+      password: 'tonin@123'
+  };
+
+  constructor(private router: Router,
+      private userService: UserService) { }
+  
+  ngOnInit() {
     
-    ngOnInit() {
-      
-    }
+  }
 
-    doLogin(): void {
-      this.userService.login(this.account).subscribe((resp) => {
-        this.router.navigate(['teams']);
-      }, (err) => {
-        console.error(err);
-      });
-    }
+  doLogin(): void {
+    this.userService.login(this.account).subscribe((resp) => {
+      this.router.navigate(['teams']);
+    }, (err) => {
+      console.error(err);
+    });
+  }
+
+  doSignUp(): void {
+    this.isCreatingUser = true;
+  }
 }

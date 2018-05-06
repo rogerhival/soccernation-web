@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 
 import { UserService } from '../../services';
@@ -9,8 +9,17 @@ import { ActivatedRoute } from '@angular/router';
     templateUrl: './user.component.html',
     styleUrls: ['./user.component.css']
   })
-  export class UserComponent implements OnInit {  
-    user: any;
+  export class UserComponent implements OnInit {
+
+    @Input() user: {
+      firstName: '',
+      lastName: '',
+      login: '',
+      password: '',
+      player: '',
+      manager: '',
+      referee: ''
+    };
 
     constructor(private route: ActivatedRoute,
           private userService: UserService,
@@ -20,7 +29,7 @@ import { ActivatedRoute } from '@angular/router';
         
     }
   
-    signUp(accountInfo: any): void {
-       
+    doSignUp(accountInfo: any): void {
+       console.log(accountInfo);
     }
   }

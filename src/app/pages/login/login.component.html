@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="isCreatingUser == null">
     <form class="form-signin" (submit)="doLogin()">
       <h2 class="form-signin-heading">Please sign in</h2>
       <label for="inputEmail" class="sr-only">Email address</label>
@@ -11,7 +11,7 @@
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <span>Or <a routerLink="user">create an account</a> now</span>
+      <span>Or <a routerLink="" (click)="doSignUp()">create an account</a> now</span>
     </form>
 </div>
-<user></user>
+<user *ngIf="isCreatingUser"></user>

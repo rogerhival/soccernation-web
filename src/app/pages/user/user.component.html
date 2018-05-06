@@ -1,1 +1,37 @@
-tessdasdasdasdasdasdsa
+<div class="container">
+    <form class="form-signin" (submit)="doSignUp()">
+        <h2 class="form-signin-heading">Create your user</h2>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="">First and last name</span>
+          </div>
+          <input type="text" [(ngModel)]="user.firstName" class="form-control">
+          <input type="text" [(ngModel)]="user.lastName" class="form-control">
+        </div>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email address" required>
+        <label for="inputEmailConfirm" class="sr-only">Repeat Email address</label>
+        <input type="email" name="emailConfirm" class="form-control" placeholder="Confirm email address" required>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" required="">
+        <div class="mini-jumbotron">
+            <h5 class="title">What are you?</h5>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="player" [(ngModel)]="user.player" checked> Player
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="manager" [(ngModel)]="user.manager"> Manager
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="referee" [(ngModel)]="user.referee"> Referee
+                </label>
+            </div>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+    </form>
+</div>
