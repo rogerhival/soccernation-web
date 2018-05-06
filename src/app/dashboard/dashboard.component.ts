@@ -7,7 +7,7 @@ import { TeamService } from '../services/teams/team.service';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  teams = [];
+  teams: any;
 
   constructor(private teamService: TeamService) { }
 
@@ -16,6 +16,6 @@ export class DashboardComponent implements OnInit {
   }
 
   getTeams(): void {
-    this.teamService.getTeams().subscribe(t => this.teams = t.json());
+    this.teamService.getTeams().subscribe(t => this.teams = t);
   }
 }

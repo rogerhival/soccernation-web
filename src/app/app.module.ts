@@ -6,10 +6,10 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { TeamsComponent } from './teams/teams.component';
-import { TeamDetailComponent } from './teams/team-detail/team-detail.component';
+import { TeamsComponent, TeamDetailComponent } from './pages';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { Api } from './services';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpClientModule,
     HttpModule
   ],
-  providers: [],
+  providers: [Api],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

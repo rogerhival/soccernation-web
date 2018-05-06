@@ -8,7 +8,7 @@ import { TeamService } from '../../services';
 })
 export class TeamsComponent implements OnInit {
 
-  teams = [];
+  teams: any;
 
   constructor(private teamService: TeamService) { }
 
@@ -21,6 +21,9 @@ export class TeamsComponent implements OnInit {
 //  }
 
   getTeams(): void {
-    this.teamService.getTeams().subscribe(h => this.teams = h.json());
+    this.teamService.getTeams()
+      .subscribe((h) => {
+        this.teams = h;
+      });
   }
 }

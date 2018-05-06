@@ -22,11 +22,15 @@ export class TeamDetailComponent implements OnInit {
 
   getTeam(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.teamService.getTeam(id).subscribe(t => this.team = t.json());
+    this.teamService.getTeam(id)
+      .subscribe((t) => {
+        this.team = t
+      }, (err) => {
+        console.error(err);
+      });
   }
 
   goBack(): void {
     this.location.back();
   }
-
 }
