@@ -5,8 +5,8 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="">First and last name</span>
           </div>
-          <input type="text" [(ngModel)]="user.firstName" class="form-control">
-          <input type="text" [(ngModel)]="user.lastName" class="form-control">
+          <input type="text" [(ngModel)]="user.firstName" class="form-control" name="firstName">
+          <input type="text" [(ngModel)]="user.lastName" class="form-control" name="lastName">
         </div>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email address" required>
@@ -18,17 +18,17 @@
             <h5 class="title">What are you?</h5>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="player" [(ngModel)]="user.player" checked> Player
+                    <input type="checkbox" value="player" [(ngModel)]="user.player" name="player" checked> Player
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="manager" [(ngModel)]="user.manager"> Manager
+                    <input type="checkbox" value="manager" [(ngModel)]="user.manager" name="manager"> Manager
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="referee" [(ngModel)]="user.referee"> Referee
+                    <input type="checkbox" value="referee" [(ngModel)]="user.referee" name="referee"> Referee
                 </label>
             </div>
         </div>

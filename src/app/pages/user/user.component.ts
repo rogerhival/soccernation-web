@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 import { UserService } from '../../services';
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   })
   export class UserComponent implements OnInit {
 
-    @Input() user: {
+    user = {
       firstName: '',
       lastName: '',
       login: '',
@@ -29,7 +29,7 @@ import { ActivatedRoute } from '@angular/router';
         
     }
   
-    doSignUp(accountInfo: any): void {
-       console.log(accountInfo);
+    doSignUp(): void {
+       console.log(this.user);
     }
   }
