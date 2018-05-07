@@ -1,0 +1,43 @@
+<div *ngIf="competition">
+
+  <h2>{{ competition.name | uppercase }} Details</h2>
+  <!--<div><span>id: </span>{{competition.id}}</div>-->
+  <div>
+    <label>Name:
+      <input [(ngModel)]="competition.name" placeholder="name" />
+    </label>
+  </div>
+  <div>
+    <label>Start Date Utc:
+      <input [(ngModel)]="competition.startDateUtc" placeholder="start date utc" />
+    </label>
+  </div>
+  <div>
+    <label>End Date Utc:
+      <input [(ngModel)]="competition.endDateUtc" placeholder="end date utc" />
+    </label>
+  </div>
+  <div>
+    <label>Subscription Price:
+      <input [(ngModel)]="competition.subscriptionPrice" placeholder="subscription price" />
+    </label>
+  </div>
+  <div>
+    <label>Type Of Competition:
+      <input [(ngModel)]="competition.typeOfCompetition" placeholder="type of competition" />
+    </label>
+  </div>
+  <div>
+    <label>Is Two Legged Tie:
+      <input [(ngModel)]="competition.isTwoLeggedTie" placeholder="is two legged tie" />
+    </label>
+  </div>
+  
+  <div>
+    Fixtures ?!?!
+  </div>
+
+  <button (click)="goBack()">go back</button>
+</div>
+
+

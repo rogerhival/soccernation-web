@@ -6,11 +6,10 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent } from './pages';
+import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, CompetitionComponent, CompetitionDetailComponent } from './pages';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Api } from './services/api/api';
-import { CompetitionComponent } from './pages/competition/competition.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,8 @@ import { CompetitionComponent } from './pages/competition/competition.component'
     DashboardComponent,
     LoginComponent,
     UserComponent,
-    CompetitionComponent
+    CompetitionComponent,
+    CompetitionDetailComponent
   ],
   imports: [
     BrowserModule,
