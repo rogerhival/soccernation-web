@@ -3,33 +3,33 @@
   <h2>{{ competition.name | uppercase }} Details</h2>
   <!--<div><span>id: </span>{{competition.id}}</div>-->
   <div>
-    <label>Name:
-      <input [(ngModel)]="competition.name" placeholder="name" />
+    <label><b>Name: </b>
+      <label>{{competition.name}}</label>
     </label>
   </div>
   <div>
-    <label>Start Date Utc:
-      <input [(ngModel)]="competition.startDateUtc" placeholder="start date utc" />
+    <label><b>Start Date Utc: </b>
+      <label>{{competition.startDateUtc | date:'MM/dd/yyyy, HH:mm'}}</label>
     </label>
   </div>
   <div>
-    <label>End Date Utc:
-      <input [(ngModel)]="competition.endDateUtc" placeholder="end date utc" />
+    <label><b>End Date Utc: </b>
+      <label>{{competition.endDateUtc | date:'MM/dd/yyyy, HH:mm'}}</label>
     </label>
   </div>
   <div>
-    <label>Subscription Price:
-      <input [(ngModel)]="competition.subscriptionPrice" placeholder="subscription price" />
+    <label><b>Subscription Price: </b>
+      <label>{{competition.subscriptionPrice}}</label>
     </label>
   </div>
   <div>
-    <label>Type Of Competition:
-      <input [(ngModel)]="competition.typeOfCompetition" placeholder="type of competition" />
+    <label><b>Type Of Competition: </b>
+        <label>{{competition.typeOfCompetition}}</label>
     </label>
   </div>
   <div>
-    <label>Is Two Legged Tie:
-      <input [(ngModel)]="competition.isTwoLeggedTie" placeholder="is two legged tie" />
+    <label><b>Is Two Legged Tie: </b>
+        <label>{{competition.isTwoLeggedTie}}</label>
     </label>
   </div>
   
