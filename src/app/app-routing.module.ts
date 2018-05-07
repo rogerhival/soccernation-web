@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, CompetitionComponent, CompetitionDetailComponent } from './pages';
+import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, CompetitionComponent, CompetitionDetailComponent, StandingsComponent } from './pages';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'teamDetail/:id', component: TeamDetailComponent },
   { path: 'competition', component: CompetitionComponent },
   { path: 'competitionDetail/:id', component: CompetitionDetailComponent },
+  { path: 'standings/:idCompetition', component: StandingsComponent },
 ];
 
 @NgModule({

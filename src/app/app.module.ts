@@ -6,7 +6,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, CompetitionComponent, CompetitionDetailComponent } from './pages';
+import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, CompetitionComponent, CompetitionDetailComponent, StandingsComponent } from './pages';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Api } from './services/api/api';
@@ -20,7 +20,8 @@ import { Api } from './services/api/api';
     LoginComponent,
     UserComponent,
     CompetitionComponent,
-    CompetitionDetailComponent
+    CompetitionDetailComponent,
+    StandingsComponent
   ],
   imports: [
     BrowserModule,

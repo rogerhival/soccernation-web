@@ -4,3 +4,4 @@ export { LoginComponent } from '../pages/login/login.component';
 export { UserComponent } from '../pages/user/user.component';
 export { CompetitionComponent } from '../pages/competition/competition.component';
 export { CompetitionDetailComponent } from '../pages/competition/competition-detail/competition-detail.component'
+export { StandingsComponent } from '../pages/standings/standings.component';

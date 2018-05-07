@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CompetitionService } from '../../../services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-competition-detail',
@@ -10,11 +11,12 @@ import { CompetitionService } from '../../../services';
 })
 export class CompetitionDetailComponent implements OnInit {
 
-  @Input() competition: any;
+  competition: any;
 
   constructor(private route: ActivatedRoute,
     private competitionService: CompetitionService,
-    private location: Location) { }
+    private location: Location,
+    private router: Router) { }
 
   ngOnInit() {
     this.getCompetition();
@@ -32,5 +34,9 @@ export class CompetitionDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  goToStandings(): void {
+    this.router.navigate(['standings', this.competition.id]);
   }
 }
