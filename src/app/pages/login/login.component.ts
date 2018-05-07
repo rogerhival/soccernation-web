@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   doLogin(): void {
     this.userService.login(this.account).subscribe((resp) => {
-      this.router.navigate(['teams']);
+      this.router.navigate(['team']);
     }, (err) => {
       console.error(err);
     });
