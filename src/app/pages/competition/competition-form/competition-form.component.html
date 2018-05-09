@@ -1,0 +1,57 @@
+<h2>Competition</h2>
+<div *ngIf="competition">
+  <label>
+    name:
+    <input [(ngModel)]="competition.name" placeholder="enter a name">
+  </label><br />
+  <label>
+    StartDateUtc:
+    <input [(ngModel)]="competition.startDateUtc" placeholder="enter a start date">
+  </label><br />
+  <label>
+    EndDateUtc:
+    <input [(ngModel)]="competition.endDateUtc" placeholder="enter an end date">
+  </label><br />
+  <label>
+    StartTime:
+    <input [(ngModel)]="competition.startTime" placeholder="enter a start time">
+  </label><br />
+  <label>
+    EndTime:
+    <input [(ngModel)]="competition.endTime" placeholder="enter an end time">
+  </label><br />
+  <label>
+    SubscriptionPrice:
+    <input [(ngModel)]="competition.subscriptionPrice" placeholder="enter the subscription price">
+  </label><br />
+  <label>
+    TypeOfCompetition:
+    <input [(ngModel)]="competition.typeOfCompetition" placeholder="enter the type of competition">
+  </label><br />
+  <label>
+    IsTwoLeggedTie:
+    <input [(ngModel)]="competition.isTwoLeggedTie" placeholder="is two-legged tie">
+  </label><br />
+  <label>
+    PointsWhenWin:
+    <input [(ngModel)]="competition.pointsWhenWin" placeholder="enter points when win">
+  </label><br />
+  <label>
+    PointsWhenLoss:
+    <input [(ngModel)]="competition.pointsWhenLoss" placeholder="enter points when loss">
+  </label><br />
+  <label>
+    PointsWhenDraw:
+    <input [(ngModel)]="competition.pointsWhenDraw" placeholder="enter points when draw">
+  </label><br />
+  <label>
+    PointsWhenBye:
+    <input [(ngModel)]="competition.pointsWhenBye" placeholder="enter points when bye">
+  </label><br />
+  <label>
+    PointsWhenForfeit:
+    <input [(ngModel)]="competition.pointsWhenForfeit" placeholder="enter PointsWhenForfeit">
+  </label><br />
+
+  <button (click)="save()">Save</button>
+</div>

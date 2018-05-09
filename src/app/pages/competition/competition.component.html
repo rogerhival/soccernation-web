@@ -4,6 +4,8 @@
     <a routerLink="/competitionDetail/{{comp.id}}">
       <span class="badge">#</span> {{comp.name}}
     </a>
+    ->
+    <button (click)="onEditCompetition(comp.id)">Edit</button>
   </li>
 
 </ul>

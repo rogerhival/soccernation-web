@@ -18,4 +18,11 @@ export class CompetitionService {
     const url = `competitions/${id}`;
     return this.api.get(url);
   }
+
+  //updateCompetition(competition: Competition): Observable<any> {
+  //  return this.http.put(this.competitionesUrl, competition, httpOptions).pipe(
+  //    tap(_ => this.log(`updated competition id=${competition.id}`)),
+  //    catchError(this.handleError<any>('updateCompetition'))
+  //  );
+  //}
 }

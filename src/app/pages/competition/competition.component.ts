@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CompetitionService } from '../../services'
 
 @Component({
@@ -10,7 +11,8 @@ export class CompetitionComponent implements OnInit {
 
   competitions: any;
 
-  constructor(private competitionService: CompetitionService) { }
+  constructor(private competitionService: CompetitionService,
+    private router: Router) { }
 
   ngOnInit() {
     this.getCompetitions();
@@ -20,5 +22,9 @@ export class CompetitionComponent implements OnInit {
     //console.log('comp');
     this.competitionService.getCompetitions()
             .subscribe(c => this.competitions = c);
+  }
+
+  onEditCompetition(id: any): void {
+    this.router.navigate(['competitionForm', { id: id }]);
   }
 }
