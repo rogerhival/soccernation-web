@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Api } from '../api/api';
+import { share } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -10,7 +11,7 @@ export class UserService {
     constructor(public api: Api){}
 
     login(accountInfo: any) {
-        let login = this.api.post('users/login', accountInfo);
+        let login = this.api.post('users/login', accountInfo).pipe(share());
 
         login.subscribe((res: any) => {
             console.log(res);
@@ -24,7 +25,7 @@ export class UserService {
     }
 
     signUp(accountInfo: any) {
-        let login = this.api.post('user', accountInfo);
+        let login = this.api.post('users', accountInfo).pipe(share());;
 
         login.subscribe((res: any) => {
             if(res) {

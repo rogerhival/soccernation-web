@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, CompetitionComponent, CompetitionDetailComponent, StandingsComponent, CompetitionFormComponent } from './pages';
+import { HomeComponent, CompanyComponent } from './pages';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Api } from './services/api/api';
@@ -14,6 +15,7 @@ import { Api } from './services/api/api';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     TeamComponent,
     TeamDetailComponent,
     DashboardComponent,
@@ -22,7 +24,8 @@ import { Api } from './services/api/api';
     CompetitionComponent,
     CompetitionDetailComponent,
     CompetitionFormComponent,
-    StandingsComponent
+    StandingsComponent,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,

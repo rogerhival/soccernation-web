@@ -1,0 +1,14 @@
+<div class="container">
+        <form class="form-signin" (submit)="doSignUp()">
+            <h2 class="form-signin-heading">Create your company</h2>
+            <label for="inputName" class="sr-only">Company name</label>
+            <input type="text" [(ngModel)]="company.name" class="form-control" placeholder="Company Name" name="company">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" [(ngModel)]="company.email" name="email" class="form-control" placeholder="Email address" required>
+            <label for="inputEmailConfirm" class="sr-only">Repeat Email address</label>
+            <input type="email" name="emailConfirm" class="form-control" placeholder="Confirm email address" required>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" [(ngModel)]="company.password" name="password" class="form-control" placeholder="Password" required="">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        </form>
+</div>

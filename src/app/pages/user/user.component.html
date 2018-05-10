@@ -14,24 +14,6 @@
         <input type="email" name="emailConfirm" class="form-control" placeholder="Confirm email address" required>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" required="">
-        <div class="mini-jumbotron">
-            <h5 class="title">What are you?</h5>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="player" [(ngModel)]="user.player" name="player" checked> Player
-                </label>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="manager" [(ngModel)]="user.manager" name="manager"> Manager
-                </label>
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="referee" [(ngModel)]="user.referee" name="referee"> Referee
-                </label>
-            </div>
-        </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
     </form>
 </div>
