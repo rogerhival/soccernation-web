@@ -1,39 +1,45 @@
 <div *ngIf="competition">
-
   <h2>{{ competition.name | uppercase }} Details</h2>
   <!--<div><span>id: </span>{{competition.id}}</div>-->
   <div>
-    <label><b>Name: </b>
+    <label>
+      <b>Name: </b>
       <label>{{competition.name}}</label>
     </label>
   </div>
   <div>
-    <label><b>Start Date Utc: </b>
+    <label>
+      <b>Start Date Utc: </b>
       <label>{{competition.startDateUtc | date:'MM/dd/yyyy, HH:mm'}}</label>
     </label>
   </div>
   <div>
-    <label><b>End Date Utc: </b>
+    <label>
+      <b>End Date Utc: </b>
       <label>{{competition.endDateUtc | date:'MM/dd/yyyy, HH:mm'}}</label>
     </label>
   </div>
   <div>
-    <label><b>Subscription Price: </b>
+    <label>
+      <b>Subscription Price: </b>
       <label>{{competition.subscriptionPrice}}</label>
     </label>
   </div>
   <div>
-    <label><b>Type Of Competition: </b>
-        <label>{{competition.typeOfCompetition}}</label>
+    <label>
+      <b>Type Of Competition: </b>
+      <label>{{competition.typeOfCompetition}}</label>
     </label>
   </div>
   <div>
-    <label><b>Is Two Legged Tie: </b>
-        <label>{{competition.isTwoLeggedTie}}</label>
+    <label>
+      <b>Is Two Legged Tie: </b>
+      <label>{{competition.isTwoLeggedTie}}</label>
     </label>
   </div>
-  
-  <button (click)="goBack()">go back</button> <button (click)="goToStandings()">Standings</button>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" (click)="goBack()" role="button">Back</a>
+    <a class="btn btn-primary btn-lg" (click)="goToStandings()" role="button" style="margin-left:10px">Standings</a>
+    <a class="btn btn-primary btn-lg" (click)="goToStandings()" role="button" style="margin-left:10px">Generate Fixtures</a>
+  </p>
 </div>
-
-

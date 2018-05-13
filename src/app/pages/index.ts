@@ -8,3 +8,4 @@ export { CompetitionDetailComponent } from '../pages/competition/competition-det
 export { CompetitionFormComponent } from '../pages/competition/competition-form/competition-form.component';
 export { StandingsComponent } from '../pages/standings/standings.component';
 export { CompanyComponent } from '../pages/company/company.component';
+export { FixtureGenerateComponent } from '../pages/fixture/fixture-generate/fixture-generate.component';

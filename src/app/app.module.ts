@@ -11,6 +11,7 @@ import { HomeComponent, CompanyComponent } from './pages';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Api } from './services/api/api';
+import { FixtureGenerateComponent } from './pages/fixture/fixture-generate/fixture-generate.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { Api } from './services/api/api';
     CompetitionDetailComponent,
     CompetitionFormComponent,
     StandingsComponent,
-    CompanyComponent
+    CompanyComponent,
+    FixtureGenerateComponent
   ],
   imports: [
     BrowserModule,
