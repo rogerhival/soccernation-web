@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, CompetitionComponent, CompetitionDetailComponent, StandingsComponent, CompetitionFormComponent, HomeComponent } from './pages';
+import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, CompetitionComponent, CompetitionDetailComponent, StandingsComponent, CompetitionFormComponent, HomeComponent, FixtureGenerateComponent } from './pages';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CompanyComponent } from './pages';
 
@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'competitionForm', component: CompetitionFormComponent },
   { path: 'standings/:idCompetition', component: StandingsComponent },
   { path: 'company', component: CompanyComponent },
+  { path: 'fixtureGenerate/:idCompetition', component: FixtureGenerateComponent },
 ];
 
 @NgModule({

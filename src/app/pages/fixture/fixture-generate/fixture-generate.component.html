@@ -1,10 +1,26 @@
 <div>
   <h1 class="display-4">Fixture generate</h1>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Generate</a>
+    <a class="btn btn-primary btn-lg" (click)="generateFixtures()" role="button">Generate</a>
     <!--<a class="btn btn-primary btn-lg" style="margin-left:10px" routerLink="/company" role="button">Company</a>-->
   </p>
-  <div>
-
+  <div *ngIf="fixtures">
+    <table border="1">
+      <tr>
+        <td>Round</td>
+        <td>Home</td>
+        <td>Visitor</td>
+        <td>Status</td>
+        <td>Leg</td>
+      </tr>
+      <tr *ngFor="let row of fixtures">
+        <td align="center">{{ row.round }}</td>
+        <td>{{ row.teamHome.name }}</td>
+        <td>{{ row.teamVisitor.name }}</td>
+        <td>{{ row.status }}</td>
+        <td>{{ row.leg }}</td>
+      </tr>
+    </table>
+    <a class="btn btn-primary btn-lg" (click)="saveFixtures()" role="button">Save</a>
   </div>
 </div>

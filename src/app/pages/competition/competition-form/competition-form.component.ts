@@ -37,7 +37,7 @@ export class CompetitionFormComponent implements OnInit {
       });
   }
 
-  save() {
+  saveCompetition() {
 
   }
 }
