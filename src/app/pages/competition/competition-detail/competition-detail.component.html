@@ -1,5 +1,5 @@
 <div *ngIf="competition">
-  <h2>{{ competition.name | uppercase }} Details</h2>
+  <h2>{{ competition.name | uppercase }}</h2>
   <!--<div><span>id: </span>{{competition.id}}</div>-->
   <div>
     <label>
@@ -37,9 +37,30 @@
       <label>{{competition.isTwoLeggedTie}}</label>
     </label>
   </div>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" (click)="goBack()" role="button">Back</a>
-    <a class="btn btn-primary btn-lg" (click)="goToStandings()" role="button" style="margin-left:10px">Standings</a>
-    <a class="btn btn-primary btn-lg" (click)="goToFixtureGenerate()" role="button" style="margin-left:10px">Generate Fixtures</a>
+  <div class="jumbotron">
+    <h2 class="display-5">Fixtures</h2>
+    <table class="table">
+      <tr>
+        <td scope="col">Date</td>
+        <td scope="col">Round</td>
+        <td scope="col">Home</td>
+        <td scope="col">Visitor</td>
+        <td scope="col">Status</td>
+        <td scope="col">Leg</td>
+      </tr>
+      <tr *ngFor="let row of competition.fixtures">
+        <td align="center">{{ row.dateUtc }}</td>
+        <td align="center">{{ row.round }}</td>
+        <td>{{ row.teamHome.name }}</td>
+        <td>{{ row.teamVisitor.name }}</td>
+        <td>{{ row.status }}</td>
+        <td>{{ row.leg }}</td>
+      </tr>
+    </table>
+  </div>
+  <p class="lead" style="margin-top:10px">
+    <button class="btn btn-primary btn-lg" (click)="goBack()" role="button">Back</button>
+    <button class="btn btn-primary btn-lg" (click)="goToStandings()" role="button" style="margin-left:10px">Standings</button>
+    <button class="btn btn-primary btn-lg" (click)="goToFixtureGenerate()" role="button" style="margin-left:10px">Generate Fixtures</button>
   </p>
 </div>
