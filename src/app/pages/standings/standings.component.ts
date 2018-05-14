@@ -52,7 +52,6 @@ export class StandingsComponent implements OnInit {
   }
 
   groupFixtures = {};
-  fixtureDate = "";
 
   getFixturesByRound(round: any): void {
     this.fixtures.forEach(element => {

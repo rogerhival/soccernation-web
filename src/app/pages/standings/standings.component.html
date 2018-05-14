@@ -51,14 +51,14 @@
       Match 1
       <button (click)="addIndex()"> > </button>
     </div>
-    {{ groupFixtures[index][0].element.dateUtc }} / Round {{index}}
+    <h2>Round {{index}}</h2>
     <table class="table">
       <tr *ngFor="let fixture of groupFixtures[index];">      
-        <td style="text-align:right;">{{ fixture.element.teamHome.name }}</td>
-        <td style="text-align:center;width:20px">{{ fixture.element.teamHomeScore }}</td>
-        <td style="text-align:center;width:5px">x</td>
-        <td style="text-align:center;width:20px">{{ fixture.element.teamVisitorScore }}</td>
-        <td style="text-align:left;">{{ fixture.element.teamVisitor.name }}</td>
+        <td>{{ fixture.element.teamHome.name }}</td>
+        <td>{{ fixture.element.teamHomeScore }}</td>
+        <td>x</td>
+        <td>{{ fixture.element.teamVisitorScore }}</td>
+        <td>{{ fixture.element.teamVisitor.name }}</td>
       </tr>
     </table>
   </div>
