@@ -1,26 +1,29 @@
-<div>
-  <h1 class="display-4">Fixture generate</h1>
+<div class="container">
+  <h2>Fixture generate</h2>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" (click)="generateFixtures()" role="button">Generate</a>
-    <!--<a class="btn btn-primary btn-lg" style="margin-left:10px" routerLink="/company" role="button">Company</a>-->
+    <button class="btn btn-primary btn-lg" (click)="saveFixtures()" role="button">Save</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-primary btn-lg" (click)="generateFixtures()" role="button">Generate</button>
   </p>
-  <div *ngIf="fixtures">
-    <table border="1">
-      <tr>
-        <td>Round</td>
-        <td>Home</td>
-        <td>Visitor</td>
-        <td>Status</td>
-        <td>Leg</td>
-      </tr>
-      <tr *ngFor="let row of fixtures">
-        <td align="center">{{ row.round }}</td>
-        <td>{{ row.teamHome.name }}</td>
-        <td>{{ row.teamVisitor.name }}</td>
-        <td>{{ row.status }}</td>
-        <td>{{ row.leg }}</td>
-      </tr>
+  <div class="container" *ngIf="fixtures">
+    <table class="table" border="1">
+      <thead>
+        <tr>
+          <th scope="col">Round #</th>
+          <th scope="col">Home</th>
+          <th scope="col">Visitor</th>
+          <th scope="col">Status</th>
+          <th scope="col">Leg</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of fixtures">
+          <th scope="row">{{ row.round }}</th>
+          <td>{{ row.teamHome.name }}</td>
+          <td>{{ row.teamVisitor.name }}</td>
+          <td>{{ row.status }}</td>
+          <td>{{ row.leg }}</td>
+        </tr>
+      </tbody>
     </table>
-    <a class="btn btn-primary btn-lg" (click)="saveFixtures()" role="button">Save</a>
   </div>
 </div>

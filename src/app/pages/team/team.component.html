@@ -1,16 +1,9 @@
 <h2>Teams</h2>
 <ul class="team">
-  <!--<li *ngFor="let team of teams"
-    [class.selected]="team === selectedTeam"
-    (click)="onSelect(team)">
-    <span class="badge">{{team.id}}</span> {{team.name}}
-  </li> -->
-
   <li *ngFor="let team of teams">
-    <a routerLink="/teamDetail/{{team.id}}">
+    <a routerLink="/team/{{team.id}}">
       <span class="badge">#</span> {{team.name}}
     </a>
   </li>
-
 </ul>
  

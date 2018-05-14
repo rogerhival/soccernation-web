@@ -25,6 +25,6 @@ export class CompetitionComponent implements OnInit {
   }
 
   onEditCompetition(id: any): void {
-    this.router.navigate(['competitionForm', { id: id }]);
+    this.router.navigate(['competition', id, 'edit' , ''], {skipLocationChange: true});
   }
 }

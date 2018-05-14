@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CompetitionService } from '../../../services';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-competition-form',
@@ -12,7 +13,8 @@ export class CompetitionFormComponent implements OnInit {
   @Input() competition: any;
 
   constructor(private competitionService: CompetitionService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private location : Location) { }
 
   ngOnInit() {
     this.getCompetition();
@@ -37,7 +39,10 @@ export class CompetitionFormComponent implements OnInit {
       });
   }
 
-  saveCompetition() {
-
+  putCompetition() {
+    this.competitionService.putCompetition(this.competition.id, this.competition)
+      .subscribe((t) => {
+        this.location.back();
+      })
   }
 }

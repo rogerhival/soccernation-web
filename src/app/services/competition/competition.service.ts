@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Api } from '../api/api'
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +20,8 @@ export class CompetitionService {
     return this.api.get(url);
   }
 
-  //updateCompetition(competition: Competition): Observable<any> {
-  //  return this.http.put(this.competitionesUrl, competition, httpOptions).pipe(
-  //    tap(_ => this.log(`updated competition id=${competition.id}`)),
-  //    catchError(this.handleError<any>('updateCompetition'))
-  //  );
-  //}
+  putCompetition(id: string, competition: any) {
+    const url = `competitions/${id}`;
+    return this.api.put(url, competition);
+  }
 }
