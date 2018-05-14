@@ -13,6 +13,8 @@ export class StandingsComponent implements OnInit {
   standings: any;
   competitions: any;
   selectedCompetition: any;
+  fixtures: any;
+  index = 1;
   
   constructor(private route: ActivatedRoute,
     private standingsService: StandingsService,
@@ -30,7 +32,8 @@ export class StandingsComponent implements OnInit {
     this.competitionService.getCompetition(idCompetition)
       .subscribe((t) => {
         this.selectedCompetition = t;
-        console.log(this.selectedCompetition);
+        this.getFixtures(t);
+        this.getFixturesByRound(1);
       }, (err) => {
         console.error(err);
     });
@@ -43,8 +46,33 @@ export class StandingsComponent implements OnInit {
     });
   }
 
+  getFixtures(competition: any): void {
+    if(competition)
+      this.fixtures = competition.fixtures;
+  }
+
+  groupFixtures = {};
+  fixtureDate = "";
+
+  getFixturesByRound(round: any): void {
+    this.fixtures.forEach(element => {
+      this.groupFixtures[element.round] = this.groupFixtures[element.round] || [];
+      this.groupFixtures[element.round].push({element});
+    });
+  }
+
   getCompetitions(): void{
-    this.competitionService.getCompetitions().subscribe(c => this.competitions = c);
+    this.competitionService.getCompetitions()
+      .subscribe(c => this.competitions = c);
+  }
+
+  subIndex(): void {
+    if(this.index > 1)
+      this.index -= 1;
+  }
+
+  addIndex(): void {
+    this.index += 1;
   }
 
   onSelect(competitionId: any): void {
