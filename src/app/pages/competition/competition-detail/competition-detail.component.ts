@@ -37,7 +37,7 @@ export class CompetitionDetailComponent implements OnInit {
   }
 
   goToStandings(): void {
-    this.router.navigate(['standings', this.competition.id]);
+    this.router.navigate(['competitionOverview', this.competition.id]);
   }
 
   goToFixtureGenerate() {

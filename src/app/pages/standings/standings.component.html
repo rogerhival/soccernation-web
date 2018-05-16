@@ -1,11 +1,5 @@
-<div *ngIf="selectedCompetition">
-  <select class="custom-select">
-    <!-- [(ngModel)]="currentCompetition" (change)="onSelect(currentCompetition.id)"-->
-    <option *ngFor="let comp of competitions" [ngValue]="comp" [selected]="comp.id == selectedCompetition.id">{{comp.name}}</option>
-  </select>
-</div>
-<div style="width: 100%; margin-top: 30px">
-  <div style="float:left; width: 70%;" >
+<div style="width: 100%">
+  <div style="float:left; width: 70%;" *ngIf="standings">
     <h2>Standings</h2>
     <table class="table" style="width: 600px;" border="1">
       <tr>
@@ -33,33 +27,12 @@
         <td>{{ row.points }}</td>
       </tr>
     </table>
-    <div *ngIf="selectedCompetition">
-      <br />
-      <b>Points System</b><br />
-
-      <b>Win:</b> {{selectedCompetition.pointsWhenWin}}pts
-      <b>Loss:</b> {{selectedCompetition.pointsWhenLoss}}pts
-      <b>Draw:</b> {{selectedCompetition.pointsWhenDraw}}pts
-      <b>Bye:</b> {{selectedCompetition.pointsWhenBye}}pts
-      <b>Forfeit:</b> {{selectedCompetition.pointsWhenForfeit}}pts
-    </div>
-  </div>
-  <div style="float:right; width: 30%;">
-    <h2 style="text-align:center">Matches</h2>
-    <div style="text-align:center">
-      <button (click)="subIndex()"> < </button>
-      Match 1
-      <button (click)="addIndex()"> > </button>
-    </div>
-    <h2>Round {{index}}</h2>
-    <table class="table">
-      <tr *ngFor="let fixture of groupFixtures[index];">      
-        <td>{{ fixture.element.teamHome.name }}</td>
-        <td>{{ fixture.element.teamHomeScore }}</td>
-        <td>x</td>
-        <td>{{ fixture.element.teamVisitorScore }}</td>
-        <td>{{ fixture.element.teamVisitor.name }}</td>
-      </tr>
-    </table>
+    <br />
+    <b>Points System</b><br />
+    <b>Win:</b> {{competition.pointsWhenWin}}pts
+    <b>Loss:</b> {{competition.pointsWhenLoss}}pts
+    <b>Draw:</b> {{competition.pointsWhenDraw}}pts
+    <b>Bye:</b> {{competition.pointsWhenBye}}pts
+    <b>Forfeit:</b> {{competition.pointsWhenForfeit}}pts
   </div>
 </div>

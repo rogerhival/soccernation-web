@@ -9,3 +9,4 @@ export { CompetitionFormComponent } from '../pages/competition/competition-form/
 export { StandingsComponent } from '../pages/standings/standings.component';
 export { CompanyComponent } from '../pages/company/company.component';
 export { FixtureGenerateComponent } from '../pages/fixture/fixture-generate/fixture-generate.component';
+export { CompetitionOverviewComponent } from '../pages/competition/competition-overview/competition-overview.component';

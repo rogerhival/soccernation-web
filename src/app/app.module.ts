@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, CompetitionComponent, CompetitionDetailComponent, StandingsComponent, CompetitionFormComponent, FixtureGenerateComponent } from './pages';
+import { CompetitionOverviewComponent } from './pages';
 import { HomeComponent, CompanyComponent } from './pages';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -26,7 +27,8 @@ import { Api } from './services/api/api';
     CompetitionFormComponent,
     StandingsComponent,
     CompanyComponent,
-    FixtureGenerateComponent
+    FixtureGenerateComponent,
+    CompetitionOverviewComponent
   ],
   imports: [
     BrowserModule,

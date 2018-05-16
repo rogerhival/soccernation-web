@@ -1,0 +1,23 @@
+<div style="width: 100%; margin-top: 30px">
+  <div style="float:left; width: 70%;">
+    <app-standings [setCompetition]="competition"></app-standings>
+  </div>
+  <div style="float:right; width: 30%;">
+    <h2 style="text-align:center">Matches</h2>
+    <div style="text-align:center">
+      <button (click)="subIndex()"> < </button>
+      Match 1
+      <button (click)="addIndex()"> > </button>
+    </div>
+    <h2>Round {{index}}</h2>
+    <table class="table">
+      <tr *ngFor="let fixture of groupFixtures[index];">
+        <td>{{ fixture.element.teamHome.name }}</td>
+        <td>{{ fixture.element.teamHomeScore }}</td>
+        <td>x</td>
+        <td>{{ fixture.element.teamVisitorScore }}</td>
+        <td>{{ fixture.element.teamVisitor.name }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
