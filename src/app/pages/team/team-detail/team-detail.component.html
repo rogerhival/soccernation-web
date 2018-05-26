@@ -1,11 +1,21 @@
 <div *ngIf="team">
-
-  <h2>{{ team.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{team.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="team.name" placeholder="name"/>
-    </label>
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="teamName">Team name</label>
+        <input type="text" class="form-control" [(ngModel)]="team.name" id="teamName" name="teamName" aria-describedby="teamNameHelp" placeholder="Enter team name">
+        <small id="teamNameHelp" class="form-text text-muted">Set a name for your team blablabla.</small>
+      </div>
+      <div class="form-group">
+          <label for="file">Logo image</label>
+          <div name="previewImage" *ngIf="team.logoImage">
+            <img [image-bin]="team.logoImage" width="200" height="200">
+          </div>
+          <input #file type="file"
+                 id="file"
+                 (change)="handleFileInput($event.target.files)">
+      </div>
+      <button type="submit" (click)="uploadFileToActivity()" class="btn btn-primary">Submit</button>
+    </form>
   </div>
-  <button (click)="goBack()">go back</button>
 </div>

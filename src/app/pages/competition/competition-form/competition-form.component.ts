@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 export class CompetitionFormComponent implements OnInit {
 
   @Input() competition: any;
+  teams: any;
 
   constructor(private competitionService: CompetitionService,
     private route: ActivatedRoute,
@@ -27,13 +28,19 @@ export class CompetitionFormComponent implements OnInit {
         this.getCompetitionById(params['id']);
       }
     });
+  }
 
+  getTeams(competitionId: any) {
+    this.competitionService.getTeams(competitionId).subscribe(data => {
+      this.teams = data;
+    });
   }
 
   getCompetitionById(id: any) {
     this.competitionService.getCompetition(id)
       .subscribe((t) => {
         this.competition = t;
+        this.getTeams(this.competition.id);
       }, (err) => {
         console.error(err);
       });

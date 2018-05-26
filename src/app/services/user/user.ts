@@ -25,7 +25,7 @@ export class UserService {
     }
 
     signUp(accountInfo: any) {
-        let login = this.api.post('users', accountInfo).pipe(share());;
+        let login = this.api.post('users', accountInfo).pipe(share());
 
         login.subscribe((res: any) => {
             if(res) {

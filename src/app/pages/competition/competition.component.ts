@@ -25,6 +25,7 @@ export class CompetitionComponent implements OnInit {
   }
 
   onEditCompetition(id: any): void {
-    this.router.navigate(['competition', id, 'edit' , ''], {skipLocationChange: true});
+    const url = `competition/${id}/edit`;
+    this.router.navigateByUrl(url);
   }
 }

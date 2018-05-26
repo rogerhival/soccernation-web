@@ -24,4 +24,9 @@ export class CompetitionService {
     const url = `competitions/${id}`;
     return this.api.put(url, competition);
   }
+
+  getTeams(competitionId: string) {
+    const url = `competitions/${competitionId}/teams`;
+    return this.api.get(url);
+  }
 }

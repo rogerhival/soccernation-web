@@ -10,8 +10,10 @@ import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, Comp
 import { CompetitionOverviewComponent } from './pages';
 import { HomeComponent, CompanyComponent } from './pages';
 import { AppRoutingModule } from './/app-routing.module';
+import { ImageLoaderDirective } from './directives/image-loader';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Api } from './services/api/api';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { Api } from './services/api/api';
     StandingsComponent,
     CompanyComponent,
     FixtureGenerateComponent,
-    CompetitionOverviewComponent
+    CompetitionOverviewComponent,
+    ImageLoaderDirective
   ],
   imports: [
     BrowserModule,

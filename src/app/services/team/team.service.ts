@@ -17,4 +17,13 @@ export class TeamService {
     // console.log("getTeams service");
     return this.api.get('teams');
   }
+
+  addTeam(teamInfo: any) {
+    return this.api.post('teams', teamInfo);
+  }
+
+  updateTeam(teamInfo: any) {
+    const url = `teams/${teamInfo.id}`;
+    return this.api.put(url, teamInfo);
+  }
 }
