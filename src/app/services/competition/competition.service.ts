@@ -20,7 +20,11 @@ export class CompetitionService {
     return this.api.get(url);
   }
 
-  putCompetition(id: string, competition: any) {
+  addCompetition(competition: any){
+    return this.api.post(`competitions`, competition);
+  }
+
+  updateCompetition(id: string, competition: any) {
     const url = `competitions/${id}`;
     return this.api.put(url, competition);
   }

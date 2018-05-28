@@ -14,12 +14,13 @@ const routes: Routes = [
   { path: 'team', component: TeamDetailComponent },
   { path: 'team/:id', component: TeamDetailComponent },
   { path: 'competitions', component: CompetitionComponent },
+  { path: 'competition/add', component: CompetitionFormComponent },
   { path: 'competition/:id', component: CompetitionDetailComponent },
   { path: 'competition/:id/edit', component: CompetitionFormComponent },
+  { path: 'competitionOverview/:idCompetition', component: CompetitionOverviewComponent },
   { path: 'standings/:idCompetition', component: StandingsComponent },
   { path: 'company', component: CompanyComponent },
   { path: 'fixtureGenerate/:idCompetition', component: FixtureGenerateComponent },
-  { path: 'competitionOverview/:idCompetition', component: CompetitionOverviewComponent },
 ];
 
 @NgModule({

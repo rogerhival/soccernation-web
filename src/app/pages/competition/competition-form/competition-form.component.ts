@@ -23,16 +23,12 @@ export class CompetitionFormComponent implements OnInit {
 
   getCompetition() {
     this.route.params.subscribe(params => {
-      console.log(params);
       if (params['id']) {
         this.getCompetitionById(params['id']);
       }
-    });
-  }
-
-  getTeams(competitionId: any) {
-    this.competitionService.getTeams(competitionId).subscribe(data => {
-      this.teams = data;
+      else {
+        this.competition = { };
+      }
     });
   }
 
@@ -46,10 +42,23 @@ export class CompetitionFormComponent implements OnInit {
       });
   }
 
-  putCompetition() {
-    this.competitionService.putCompetition(this.competition.id, this.competition)
-      .subscribe((t) => {
-        this.location.back();
-      })
+  getTeams(competitionId: any) {
+    this.competitionService.getTeams(competitionId).subscribe(data => {
+      this.teams = data;
+    });
+  }
+
+  saveEditCompetition() {
+    if (this.competition.id) {
+      this.competitionService.updateCompetition(this.competition.id, this.competition)
+        .subscribe((t) => {
+          this.location.back();
+        });
+    } else {
+      this.competitionService.addCompetition(this.competition)
+        .subscribe((t) => {
+          this.location.back();
+        });
+    }
   }
 }

@@ -6,7 +6,7 @@ export { UserComponent } from '../pages/user/user.component';
 export { CompetitionComponent } from '../pages/competition/competition.component';
 export { CompetitionDetailComponent } from '../pages/competition/competition-detail/competition-detail.component';
 export { CompetitionFormComponent } from '../pages/competition/competition-form/competition-form.component';
+export { CompetitionOverviewComponent } from '../pages/competition/competition-overview/competition-overview.component';
 export { StandingsComponent } from '../pages/standings/standings.component';
 export { CompanyComponent } from '../pages/company/company.component';
 export { FixtureGenerateComponent } from '../pages/fixture/fixture-generate/fixture-generate.component';
-export { CompetitionOverviewComponent } from '../pages/competition/competition-overview/competition-overview.component';
