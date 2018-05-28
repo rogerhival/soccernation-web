@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CompetitionService } from '../../../services';
 import { Router } from '@angular/router';
+import { Competition } from '../../../models';
 
 @Component({
   selector: 'app-competition-detail',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CompetitionDetailComponent implements OnInit {
 
-  competition: any;
+  competition: Competition;
 
   constructor(private route: ActivatedRoute,
     private competitionService: CompetitionService,

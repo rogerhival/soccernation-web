@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CompetitionService } from '../../../services'
+import { Competition } from '../../../models';
 
 @Component({
   selector: 'app-competition-overview',
@@ -10,7 +11,7 @@ import { CompetitionService } from '../../../services'
 export class CompetitionOverviewComponent implements OnInit {
   index = 1;
   fixtures: any;
-  competition: any;
+  competition: Competition;
 
   constructor(private route: ActivatedRoute,
     private competitionService: CompetitionService) { }

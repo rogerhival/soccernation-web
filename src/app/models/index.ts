@@ -1,0 +1,2 @@
+export { Competition } from './competition';
+

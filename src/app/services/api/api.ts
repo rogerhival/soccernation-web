@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class Api {
@@ -24,6 +25,10 @@ export class Api {
     }
 
     return this.http.get(this.url + '/' + endpoint, reqOpts);
+  }
+
+  getGeneric<T>(endpoint: string) {
+    return this.http.get<T>(this.url + '/' + endpoint, {observe: 'body'});
   }
 
   post(endpoint: string, body: any, reqOpts?: any) {

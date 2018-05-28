@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Api } from '../api/api'
 import { Observable } from 'rxjs';
+import { Competition } from '../../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CompetitionService {
-
+  
   constructor(private api: Api) { }
 
   getCompetitions(){
-    //console.log('compserv');
-    return this.api.get('competitions');
+    return this.api.getGeneric<Competition[]>('competitions');
   }
 
   getCompetition(id: string) {
     // console.log("getTeam by id service");
     const url = `competitions/${id}`;
-    return this.api.get(url);
+    return this.api.getGeneric<Competition>(url);
   }
 
   addCompetition(competition: any){
