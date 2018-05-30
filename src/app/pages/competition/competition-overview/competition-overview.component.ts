@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CompetitionService } from '../../../services'
+import { CompetitionService } from '../../../services';
 import { Competition } from '../../../models';
 
 @Component({
@@ -12,6 +12,8 @@ export class CompetitionOverviewComponent implements OnInit {
   index = 1;
   fixtures: any;
   competition: Competition;
+
+  groupFixtures = {};
 
   constructor(private route: ActivatedRoute,
     private competitionService: CompetitionService) { }
@@ -26,14 +28,12 @@ export class CompetitionOverviewComponent implements OnInit {
     this.competitionService.getCompetition(idCompetition)
       .subscribe((t) => {
         this.competition = t;
-        this.fixtures = this.competition.fixtures
+        this.fixtures = this.competition.fixtures;
         this.getFixturesByRound(1);
       }, (err) => {
         console.error(err);
       });
   }
-
-  groupFixtures = {};
 
   getFixturesByRound(round: any): void {
     this.fixtures.forEach(element => {
@@ -43,8 +43,9 @@ export class CompetitionOverviewComponent implements OnInit {
   }
 
   subIndex(): void {
-    if (this.index > 1)
+    if (this.index > 1) {
       this.index -= 1;
+    }
   }
 
   addIndex(): void {
