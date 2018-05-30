@@ -15,7 +15,7 @@ export class CompetitionFormComponent implements OnInit {
 
   constructor(private competitionService: CompetitionService,
     private route: ActivatedRoute,
-    private location : Location) { }
+    private location: Location) { }
 
   ngOnInit() {
     this.getCompetition();
@@ -25,8 +25,7 @@ export class CompetitionFormComponent implements OnInit {
     this.route.params.subscribe(params => {
       if (params['id']) {
         this.getCompetitionById(params['id']);
-      }
-      else {
+      } else {
         this.competition = { };
       }
     });
