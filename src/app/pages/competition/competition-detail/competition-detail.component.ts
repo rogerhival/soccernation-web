@@ -23,11 +23,11 @@ export class CompetitionDetailComponent implements OnInit {
     this.getCompetition();
   }
 
-  getCompetition(){
+  getCompetition() {
     const id = this.route.snapshot.paramMap.get('id');
     this.competitionService.getCompetition(id)
       .subscribe((t) => {
-        this.competition = t
+        this.competition = t;
       }, (err) => {
         console.error(err);
       });
