@@ -1,13 +1,19 @@
 <h2>Competitions</h2>
-<ul>
-  <li *ngFor="let comp of competitions">
-    <a routerLink="/competition/{{comp.id}}">
-      <span class="badge">#</span> {{comp.name}}
-    </a>
-    ->
-    <button class="btn btn-primary btn" (click)="onEditCompetition(comp.id)">Edit</button>
-  </li>
-</ul>
-<div class="container">
-  <a class="btn btn-large btn-primary" routerLink="/competition/add" role="button">Create new competition</a>
+<table class="table">
+  <tbody>
+    <tr *ngFor="let comp of competitions">
+      <th class="row">
+          <a routerLink="/competition/{{comp.id}}">{{comp.name}}</a>
+        </th>
+        <th>
+          <button class="btn btn-primary btn-sm" (click)="onEditCompetition(comp.id)">Edit</button>
+        </th>
+        <th>
+          <button class="btn btn-primary btn-sm" (click)="onDeleteCompetition(comp.id)">Delete</button>
+        </th>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <a class="btn btn-success btn-primary" routerLink="/competition/add" role="button">Create new competition</a>
 </div>

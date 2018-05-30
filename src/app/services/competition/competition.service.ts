@@ -33,4 +33,9 @@ export class CompetitionService {
     const url = `competitions/${competitionId}/teams`;
     return this.api.get(url);
   }
+
+  deleteCompetition(id: string) {
+    const url = `competitions/${id}`;
+    return this.api.delete(url);
+  }
 }
