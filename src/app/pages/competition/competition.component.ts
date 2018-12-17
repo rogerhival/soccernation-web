@@ -21,8 +21,8 @@ export class CompetitionComponent implements OnInit {
     this.getCompetitions();
   }
 
-  getCompetitions(): void{
-    //console.log('comp');
+  getCompetitions(): void {
+    // console.log('comp');
     this.competitionService.getCompetitions()
             .subscribe(c => this.competitions = c);
   }

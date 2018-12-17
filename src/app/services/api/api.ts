@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class Api {
-  url: string = 'http://localhost:65075/api';
+  url = 'http://localhost:65075/api';
 
   constructor(public http: HttpClient) {
   }
@@ -19,8 +19,10 @@ export class Api {
     // Support easy query params for GET requests
     if (params) {
       reqOpts.params = new HttpParams();
-      for (let k in params) {
-        reqOpts.params = reqOpts.params.set(k, params[k]);
+      for (const k in params) {
+        if (k != null) {
+          reqOpts.params = reqOpts.params.set(k, params[k]);
+        }
       }
     }
 

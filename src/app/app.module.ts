@@ -6,7 +6,9 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, CompetitionComponent, CompetitionDetailComponent, StandingsComponent, CompetitionFormComponent, FixtureGenerateComponent } from './pages';
+import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent } from './pages';
+import { CompetitionComponent, CompetitionDetailComponent, StandingsComponent, CompetitionFormComponent } from './pages';
+import { FixtureGenerateComponent } from './pages';
 import { CompetitionOverviewComponent } from './pages';
 import { HomeComponent, CompanyComponent } from './pages';
 import { AppRoutingModule } from './/app-routing.module';

@@ -37,7 +37,7 @@ export class TeamDetailComponent implements OnInit {
           console.error(err);
         });
     } else {
-      this.team = { name: '', logoImage: '' }
+      this.team = { name: '', logoImage: '' };
     }
   }
 
@@ -51,8 +51,8 @@ export class TeamDetailComponent implements OnInit {
       this.teamService.updateTeam(this.team)
         .subscribe((t) => {
           console.log(t);
-          //this.router.navigate(['teams']);
-          //do nothing
+          // this.router.navigate(['teams']);
+          // do nothing
         });
     }
   }
@@ -66,8 +66,7 @@ export class TeamDetailComponent implements OnInit {
   }
 
   uploadFileToActivity() {
-    if (!this.fileToUpload)
-    {
+    if (!this.fileToUpload) {
       this.saveEditTeam();
     }
 
@@ -81,7 +80,7 @@ export class TeamDetailComponent implements OnInit {
     });
   }
 
-  getImage(name: any): any{
-    return this.fileUploadService.getImage(name).subscribe(data => { return data; });
+  getImage(name: any): any {
+    return this.fileUploadService.getImage(name).subscribe(data => data);
   }
 }

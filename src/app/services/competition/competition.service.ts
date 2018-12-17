@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Api } from '../api/api'
-import { Observable } from 'rxjs';
+import { Api } from '../api/api';
 import { Competition } from '../../models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CompetitionService {
-  
+
   constructor(private api: Api) { }
 
-  getCompetitions(){
+  getCompetitions() {
     return this.api.getGeneric<Competition[]>('competitions');
   }
 
@@ -20,7 +19,7 @@ export class CompetitionService {
     return this.api.getGeneric<Competition>(url);
   }
 
-  addCompetition(competition: any){
+  addCompetition(competition: any) {
     return this.api.post(`competitions`, competition);
   }
 

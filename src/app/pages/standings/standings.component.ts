@@ -10,7 +10,7 @@ export class StandingsComponent implements OnInit {
   standings: any;
   competition: any;
 
-  @Input() 
+  @Input()
   set setCompetition(competition: any) {
     this.competition = competition;
     this.getStandings();

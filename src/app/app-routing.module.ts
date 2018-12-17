@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TeamComponent, TeamDetailComponent, LoginComponent, UserComponent, CompetitionComponent, CompetitionDetailComponent, StandingsComponent, CompetitionFormComponent, HomeComponent, FixtureGenerateComponent } from './pages';
+import { TeamComponent, TeamDetailComponent, LoginComponent } from './pages';
+import { CompetitionComponent, CompetitionDetailComponent, StandingsComponent } from './pages';
 import { CompetitionOverviewComponent } from './pages';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CompanyComponent } from './pages';
+import { CompetitionFormComponent, HomeComponent, FixtureGenerateComponent, CompanyComponent } from './pages';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // default route if empty like "http://localhost:4200"

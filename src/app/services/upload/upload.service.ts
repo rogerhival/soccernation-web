@@ -9,11 +9,11 @@ export class UploadService {
   constructor(private api: Api) { }
 
   upload(fileData: any) {
-    return this.api.post('upload', fileData).pipe(share());;
+    return this.api.post('upload', fileData).pipe(share());
   }
 
   getImage(imageName: any) {
-      const url = `upload?name=${imageName}`
+      const url = `upload?name=${imageName}`;
       return this.api.get(url).pipe(share());
   }
 }

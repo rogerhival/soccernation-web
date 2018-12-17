@@ -8,7 +8,7 @@ import { UserService } from '../../services';
   styleUrls: ['./company.component.css']
 })
 export class CompanyComponent implements OnInit {
-  
+
   company = {
     name: '',
     email: '',
@@ -19,9 +19,9 @@ export class CompanyComponent implements OnInit {
 
   constructor(private router: Router,
     private userService: UserService) { }
-  
+
   ngOnInit() {
-    
+
   }
 
   doSignUp(): void {

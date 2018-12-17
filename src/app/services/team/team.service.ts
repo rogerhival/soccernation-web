@@ -4,7 +4,7 @@ import { Api } from '../api/api';
 @Injectable({
   providedIn: 'root'
 })
-export class TeamService {  
+export class TeamService {
   constructor(private api: Api) { }
 
   getTeam(id: string) {
