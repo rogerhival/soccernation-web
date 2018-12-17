@@ -44,4 +44,9 @@ export class CompetitionDetailComponent implements OnInit {
   goToFixtureGenerate() {
     this.router.navigate(['fixtureGenerate', this.competition.id]);
   }
+
+  goToEdit() {
+    const url = `competition/${this.competition.id}/edit`;
+    this.router.navigateByUrl(url);
+  }
 }

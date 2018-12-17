@@ -60,4 +60,8 @@ export class CompetitionFormComponent implements OnInit {
         });
     }
   }
+
+  goBack(): void {
+    this.location.back();
+  }
 }

@@ -1,42 +1,78 @@
 <div *ngIf="competition">
   <h2>{{ competition.name | uppercase }}</h2>
-  <!--<div><span>id: </span>{{competition.id}}</div>-->
-  <div>
-    <label>
-      <b>Name: </b>
-      <label>{{competition.name}}</label>
-    </label>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">Start Date</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="startDateUtc" value="{{competition.startDateUtc | date:'MM/dd/yyyy HH:mm'}}">
+    </div>
   </div>
-  <div>
-    <label>
-      <b>Start Date Utc: </b>
-      <label>{{competition.startDateUtc | date:'MM/dd/yyyy, HH:mm'}}</label>
-    </label>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">End Date</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="endDateUtc" value="{{competition.endDateUtc | date:'MM/dd/yyyy HH:mm'}}">
+    </div>
   </div>
-  <div>
-    <label>
-      <b>End Date Utc: </b>
-      <label>{{competition.endDateUtc | date:'MM/dd/yyyy, HH:mm'}}</label>
-    </label>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">Start Time</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="startTime" value="{{competition.startTime}}">
+    </div>
   </div>
-  <div>
-    <label>
-      <b>Subscription Price: </b>
-      <label>{{competition.subscriptionPrice}}</label>
-    </label>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">End Time</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="endTime" value="{{competition.endTime}}">
+    </div>
   </div>
-  <div>
-    <label>
-      <b>Type Of Competition: </b>
-      <label>{{competition.typeOfCompetition}}</label>
-    </label>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">Subscription Price</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="subscriptionPrice" value="{{competition.subscriptionPrice | currency}}">
+    </div>
   </div>
-  <div>
-    <label>
-      <b>Is Two Legged Tie: </b>
-      <label>{{competition.isTwoLeggedTie}}</label>
-    </label>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">Type Of Competition</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="typeOfCompetition" value="{{competition.typeOfCompetition}}">
+    </div>
   </div>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">Is Two Legged Tie</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="isTwoLeggedTie" value="{{competition.isTwoLeggedTie}}">
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">Points When Win</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="pointsWhenWin" value="{{competition.pointsWhenWin}}">
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">Points When Loss</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="pointsWhenLoss" value="{{competition.pointsWhenLoss}}">
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">Points When Draw</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="pointsWhenDraw" value="{{competition.pointsWhenDraw}}">
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">Points When Bye</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="pointsWhenBye" value="{{competition.pointsWhenBye}}">
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-2 col-form-label">Points When Forfeit</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="pointsWhenForfeit" value="{{competition.pointsWhenForfeit}}">
+    </div>
+  </div>
+
   <div class="jumbotron">
     <h2 class="display-5">Fixtures</h2>
     <table class="table" style="width:600px">
@@ -58,9 +94,11 @@
       </tr>
     </table>
   </div>
+
   <p class="lead" style="margin-top:10px">
-    <button class="btn btn-primary btn-lg" (click)="goBack()" role="button">Back</button>
-    <button class="btn btn-primary btn-lg" (click)="goToStandings()" role="button" style="margin-left:10px">Standings</button>
-    <button class="btn btn-primary btn-lg" (click)="goToFixtureGenerate()" role="button" style="margin-left:10px">Generate Fixtures</button>
+    <button class="btn btn-primary btn" (click)="goBack()" role="button">Back</button>
+    <button class="btn btn-primary btn" (click)="goToEdit()" role="button" style="margin-left:10px">Edit</button>
+    <button class="btn btn-primary btn" (click)="goToStandings()" role="button" style="margin-left:10px">Standings</button>
+    <button class="btn btn-primary btn" (click)="goToFixtureGenerate()" role="button" style="margin-left:10px">Generate Fixtures</button>
   </p>
 </div>
